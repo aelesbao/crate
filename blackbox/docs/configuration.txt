@@ -1005,35 +1005,38 @@ To enable Azure discovery set the ``discovery.type`` setting to ``azure``.
 **cloud.azure.management.resourcegroup.name**
   | *Runtime:*  ``no``
 
-    the azure resource group name
+  The name of the resource group the Crate cluster is running on.
+  All nodes need to be started within the same resource group.
 
 **cloud.azure.management.subscription.id**
   | *Runtime:*  ``no``
 
-    the azure subscription id
+  The subscription ID of your Azure account.
+  You can find the ID on the `Azure Portal`_.
 
 **cloud.azure.management.tenant.id**
   | *Runtime:*  ``no``
 
-    the azure tenant id
+  The tenant ID of the `Active Directory application`_.
 
 **cloud.azure.management.app.id**
   | *Runtime:*  ``no``
 
-    the azure active directory application id
+  The application ID of the `Active Directory application`_.
 
 **cloud.azure.management.app.secret**
   | *Runtime:*  ``no``
 
-    the password for the azure active directory application
+  The password of the `Active Directory application`_.
 
 **discovery.azure.method**
   | *Runtime:* ``no``
   | *Default:* ``vnet``
   | *Allowed Values:* ``vnet | subnet``
 
-     Discovery method ``vnet`` will discover all VMs in the same virtual network.
-The use of method ``subnet`` will add all virtual machines in the same subnet to the cluster.
+  Defines the scope of the discovery. ``vnet`` will discover all VMs within the
+  same virtual network (default), ``subnet`` will discover all VMs within the
+  same subnet of the Crate instance.
 
 
 .. _conf_routing:
@@ -1758,15 +1761,11 @@ running on it.
 
 
 .. _YAML: http://en.wikipedia.org/wiki/YAML
-
 .. _Log4j: https://logging.apache.org/log4j/1.2/
-
 .. _`hierarchical named loggers`: https://logging.apache.org/log4j/1.2/manual.html
-
 .. _PropertyConfigurator: https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PropertyConfigurator.html
-
 .. _`JarURLConnection documentation`: http://docs.oracle.com/javase/8/docs/api/java/net/JarURLConnection.html
-
 .. _Lucene: https://lucene.apache.org/
-
 .. _`Compressed Oops`: https://wiki.openjdk.java.net/display/HotSpot/CompressedOops
+.. _`Azure Portal`: https://portal.azure.com
+.. _`Active Directory application`: https://azure.microsoft.com/en-us/documentation/articles/resource-group-authenticate-service-principal-cli/#_create-ad-application-with-password

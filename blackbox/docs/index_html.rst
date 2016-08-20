@@ -24,7 +24,7 @@ Contents
    sql/index
    blob
    plugins
-   azure_discovery
+   discovery
    udc
    best_practice/index
    protocols/index
